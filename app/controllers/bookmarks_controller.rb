@@ -17,7 +17,7 @@ class BookmarksController < ApplicationController
   def destroy
     bookmark = Bookmark.find(params[:id])
     bookmark.destroy
-    redirect_to '/'
+    redirect_to root_path
   end
   def show
     @bookmark = Bookmark.find(params[:id])
@@ -28,6 +28,6 @@ class BookmarksController < ApplicationController
   def update
   bookmark = Bookmark.find(params[:id])
   bookmark.update(title: params[:bookmark][:title], url: params[:bookmark][:url],note: params[:bookmark][:note])
-  redirect_to '/'
+  redirect_to root_path
   end
 end
